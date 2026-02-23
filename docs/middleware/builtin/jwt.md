@@ -1,7 +1,7 @@
 # JWT 認証ミドルウェア
 
 JWT 認証ミドルウェアは、 JWT を使ってトークンを検証して認証することができます。
-ミドルウェアは、`cookie`オプションがセットされていない場合に`Authorization`ヘッダを確認します。 ヘッダの名前は`headerName`オプションでカスタマイズすることができます。
+ミドルウェアは、 `cookie` オプションがセットされていない場合に `Authorization` ヘッダを確認します。 ヘッダの名前は `headerName` オプションでカスタマイズすることができます。
 
 :::info
 クライアントから送信された Authotization ヘッダには、指定されたスキーマが必要です。
@@ -60,7 +60,7 @@ app.get('/auth/page', (c) => {
 
 ::: tip
 
-`jwt()`は単なるミドルウェア関数です。 環境変数を使いたい場合は、 (例: `c.env.JWT_SECRET`)、 以下のように使用できます:
+`jwt()` は単なるミドルウェア関数です。 環境変数を使いたい場合は、 (例: `c.env.JWT_SECRET`) 、 以下のように使用できます:
 
 ```js
 app.use('/auth/*', (c, next) => {
@@ -84,7 +84,7 @@ app.use('/auth/*', (c, next) => {
 
 認証に使われるアルゴリズム。
 
-利用可能な型は`HS256` | `HS384` | `HS512` | `RS256` | `RS384` | `RS512` | `PS256` | `PS384` | `PS512` | `ES256` | `ES384` | `ES512` | `EdDSA`です。
+利用可能な型は `HS256` | `HS384` | `HS512` | `RS256` | `RS384` | `RS512` | `PS256` | `PS384` | `PS512` | `ES256` | `ES384` | `ES512` | `EdDSA` です。
 
 ### <Badge type="info" text="optional" /> cookie: `string`
 
@@ -92,7 +92,7 @@ app.use('/auth/*', (c, next) => {
 
 ### <Badge type="info" text="optional" /> headerName: `string`
 
-JWT トークンを探すヘッダの名前。 デフォルトは`Authorization`です。
+JWT トークンを探すヘッダの名前。 デフォルトは `Authorization` です。
 
 ```ts
 app.use(
@@ -111,16 +111,16 @@ app.use(
 
 #### <Badge type="info" text="optional" /> verifyOptions.iss: `string | RexExp`
 
-期待される検証トークンの発行者。 この値が設定されていない場合、`iss`クレームはチェック**されません**。
+期待される検証トークンの発行者。 この値が設定されていない場合、 `iss` クレームはチェック**されません**。
 
 #### <Badge type="info" text="optional" /> verifyOptions.nbf: `boolean`
 
-`nbf`（not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。デフォルトは `true` です。
+`nbf`（not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。 デフォルトは `true` です。
 
 #### <Badge type="info" text="optional" /> verifyOptions.iat: `boolean`
 
-`iat`（not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。デフォルトは `true` です。
+`iat` （not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。 デフォルトは `true` です。
 
 #### <Badge type="info" text="optional" /> verifyOptions.exp: `boolean`
 
-`exp`（not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。デフォルトは `true` です。
+`exp` （not before）クレームは、存在し、かつこれが `true` に設定されている場合に検証されます。 デフォルトは `true` です。
